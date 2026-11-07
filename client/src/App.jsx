@@ -2,7 +2,8 @@
 import { useEffect, useState } from "react";
 import "./App.css";
 
-const API_URL = "http://localhost:5000/api";
+const API_URL =
+  import.meta.env.VITE_API_URL || "http://localhost:5000/api";
 
 function App() {
   const [members, setMembers] = useState([]);
@@ -86,10 +87,6 @@ function App() {
           <h1>Team Availability Tracker</h1>
           <p>Manage your team's availability in real time.</p>
         </div>
-
-        <button className="primary-button" onClick={fetchMembers}>
-          Refresh Data
-        </button>
       </header>
 
       {error && <p style={{ color: "#DC2626" }}>{error}</p>}
@@ -120,7 +117,7 @@ function App() {
         <div className="section-heading">
           <div>
             <h2>Team Members</h2>
-            <p style={{ color: "#64748B", marginTop: "6px" }}>
+            <p style={{ color: "#969A9B", marginTop: "6px" }}>
               Manage and update member status
             </p>
           </div>
